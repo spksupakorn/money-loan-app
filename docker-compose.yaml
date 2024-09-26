@@ -1,0 +1,33 @@
+version: '3.3' # docker-compose version
+services: # services which our app going to use. (list of containers we want to create)
+  mongoCont: # container name 
+    image: 'mongo:7.0.5' # which image container will build on
+    restart: always
+    ports:
+      - "27017:27017"
+    networks: # adding network
+      - mern-app
+    volumes:
+      - mongo-data:/var/lib/mongodb/data
+
+  api-server:
+    build: . # build the Docker image for the service using the Dockerfile located in the current directory
+    restart: always
+    environment:
+      PORT: 8001
+      MONGO_URL: mongodb://mongoCont:27017/yeumtang
+      JWT_SECRET: GeKgdX0zNTPlyy0vWyYfcpwm5h97UDlD
+    ports:
+      - "8001:8001"
+    networks: # adding network
+      - mern-app
+    depends_on:
+      - mongoCont
+
+networks: # allow services to talk to each other while providing isolation from other docker container, running on the same host
+  mern-app:
+    driver: bridge
+
+volumes: # enable persistence of database data across container restart
+  mongo-data:
+    driver: local
