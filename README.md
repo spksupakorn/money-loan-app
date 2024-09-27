@@ -86,7 +86,7 @@ Content-Type: application/json
 
 Authorization: Bearer <JWT_TOKEN>
 
-
+- Top-Up: POST /api/v1/add-money (requires a JWT token)
 - Borrow money: POST /api/v1/borrow (requires a JWT token)
 - Repay money: POST /api/v1/repay (requires a JWT token)
 - View all debts: GET /api/v1/debts (requires a JWT token)
