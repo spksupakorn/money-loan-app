@@ -91,5 +91,5 @@ Authorization: Bearer <JWT_TOKEN>
 - Repay money: POST /api/v1/repay (requires a JWT token)
 - View all debts: GET /api/v1/debts (requires a JWT token)
 - View all transactions: GET /api/v1/transactions (requires a JWT token)
-- View debts for specific user: GET /api/v1/debts/<userId> (requires a JWT token)
-- View transactions for specific user: GET /api/v1/transactions/<userId> (requires a JWT token)
+- View debts for specific user: GET /api/v1/debts/< userId > (requires a JWT token)
+- View transactions for specific user: GET /api/v1/transactions/< userId > (requires a JWT token)
