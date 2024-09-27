@@ -11,7 +11,8 @@ services: # services which our app going to use. (list of containers we want to 
       - mongo-data:/var/lib/mongodb/data
 
   api-server:
-    build: . # build the Docker image for the service using the Dockerfile located in the current directory
+    # build: .
+    image: 'ksupakorn/money-loan-app:latest'
     restart: always
     environment:
       PORT: 8001
