@@ -14,30 +14,50 @@ Key Features:
 MongoDB Collection Structure:
 
 users:
+
     {
+    
         "_id": ObjectId,
+        
         "username": String,
+        
         "balance": Number,
+        
         "password": String,
+        
         "createdAt": Date
+        
     }
 
 transactions: 
+
     {
+    
         "_id": ObjectId,
+        
         "borrowerId": ObjectId,
+        
         "lenderId": ObjectId,
+        
         "amount": Number,
+        
         "type": "borrow" | "repayment",
+        
         "date": Date
+        
     }
 
 debts:
+
     {
         "_id": ObjectId,
+        
         "borrowerId": ObjectId,
+        
         "lenderId": ObjectId,
+        
         "amountOwed": Number
+        
     }
 
 Testing the API
@@ -46,12 +66,19 @@ Host: http://localhost:8001
 - Login a user: POST /api/v1/login
 
 example response token :
+
     {
+    
     "success": true,
+    
     "message": "Login success.",
+    
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmYzYzAxMjFjNjA0NWZkY2Y3YTk
+    
     4MGYiLCJpYXQiOjE3MjczNDU5NTAsImV4cCI6MTcyNzM0OTU1MH0.12SUW_K30kbaURpcVRDiKft_FdErkYpcOhxlKbYPSg4"
+    
     }
+    
     
 Header:
 Content-Type: application/json
