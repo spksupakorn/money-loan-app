@@ -81,8 +81,11 @@ example response token :
     
     
 Header:
+
 Content-Type: application/json
+
 Authorization: Bearer <JWT_TOKEN>
+
 
 - Borrow money: POST /api/v1/borrow (requires a JWT token)
 - Repay money: POST /api/v1/repay (requires a JWT token)
